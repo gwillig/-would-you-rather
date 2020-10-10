@@ -27,12 +27,13 @@
 .App-link {
   color: #61dafb;
 }
+/*Customize =========================*/
+.nav-tabs .nav-item.nav-link{
+  color:white;
+  margin-left: 10px;
+}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-tabs .nav-item.nav-link.active{
+  background-color: #28afb0;
+  border-color: transparent;
 }
