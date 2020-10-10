@@ -118,3 +118,4 @@ This repository is the starter code for *all* Udacity students. Therefore, we mo
 
 ## Licence:
 * The images of the avatars where created with https://getavataaars.com/
+* Icons made by https://www.flaticon.com/authors/gregor-cresnar
