@@ -18,7 +18,7 @@ class Header extends React.Component {
                 <h1>Would you rather
                     <span style={this.span_style}>.</span>
                 </h1>
-                <h3>Ask questions and get answers</h3>
+                <h3>Ask options and get answers</h3>
             </Jumbotron>
         )
     }
