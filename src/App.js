@@ -11,17 +11,21 @@ import New_Question from "./components/New_Question/New_Question";
 import Leader_board from "./components/Leader_Board/Leader_board";
 import Login from "./components/Login/Login";
 import React, {Component} from "react";
-
+import {_getUsers} from "./_DATA"
 class App extends React.Component {
     //style//
-
+    state=_getUsers()
     app_style = {
         backgroundColor: "#19647e"
     }
     render(){
     return (
         <BrowserRouter>
-            <Route exact path="/" render={props => (
+            <Route  exact path="/" render={props => (
+
+                <Login></Login>
+            )}/>
+            <Route  path="/home" render={props => (
                 <div>
                     <Row style={this.app_style}>
                         <Col>
@@ -53,9 +57,6 @@ class App extends React.Component {
             )}
 
             />
-            <Route path="/search" render={props => (
-                <h1>Test</h1>
-            )}/>
         </BrowserRouter>
     );
 }
