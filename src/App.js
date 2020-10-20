@@ -20,18 +20,19 @@ class App extends React.Component {
     }
     render(){
     return (
-        <BrowserRouter>
+        <BrowserRouter >
+            <Row style={this.app_style}>
+                <Col>
+                    <Header></Header>
+                </Col>
+            </Row>
             <Route  exact path="/" render={props => (
 
                 <Login></Login>
             )}/>
             <Route  path="/home" render={props => (
                 <div>
-                    <Row style={this.app_style}>
-                        <Col>
-                            <Header></Header>
-                        </Col>
-                    </Row>
+
                     <Row style={this.app_style}>
                         <Col style={{paddingRight: " 0px"}}>
                             <Tabs defaultActiveKey={"Home"} id="uncontrolled-tab-example">

@@ -12,7 +12,8 @@ class Login extends React.Component {
         backgroundClip: "border-box",
         border:" 2px solid #19647e",
         borderRadius: "50px",
-        padding: "30px"
+        padding: "30px",
+
     }
     submitBtn_style={
         backgroundColor: "#19647e",
@@ -25,8 +26,8 @@ class Login extends React.Component {
 
     render() {
         return (
-            <Jumbotron className="d-flex align-items-center min-vh-100">
-             <Container className="text-center  max-w-1">
+            <Jumbotron className="d-flex align-items-center min-vh-50">
+             <Container style={{maxWidth:"600px"}} className="text-center  max-w-1">
                  <Form onSubmit={this.submitForm.bind(this)} style={this.form_style}>
                      <h3 style={this.title_style}>Sign In</h3>
                      <Form.Group controlId="exampleForm.SelectCustom">
