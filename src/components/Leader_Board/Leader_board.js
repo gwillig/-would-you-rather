@@ -2,12 +2,15 @@ import React from 'react'
 import {Jumbotron } from "react-bootstrap";
 
 class Leader_board extends React.Component {
-
+    constructor(props) {
+        super(props)
+        this.state = {  user:[{name:"gustav"},{name:"tom"},{name:"hans"}]}
+    }
     render() {
         return (
             <Jumbotron>
-                <h1>Home
-                </h1>
+                {this.state.user.map((user)=>{return <h1>{user.name}</h1>})}
+
 
             </Jumbotron>
         )
