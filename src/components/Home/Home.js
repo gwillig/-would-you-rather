@@ -1,8 +1,7 @@
 import React from 'react'
-import {Jumbotron, Tab, Tabs, Container, Form} from "react-bootstrap";
-import {Link} from "react-router-dom";
+import {Jumbotron, Tab, Tabs, Container} from "react-bootstrap";
 import QuestionCard from './QuestionCard'
-import SurveyCard from "./SurveyCard";
+import {connect} from 'react-redux'
 import './home.css'
 
 class Home extends React.Component {
@@ -50,4 +49,10 @@ class Home extends React.Component {
     }
 }
 
-export default Home
+function mapStatetoProps({questions}){
+    return{
+        questionIds:Object.keys(questions)
+            .sort((a,b)=>questions[a].timestamp - questions[b].timestamp )
+    }
+}
+export default connect(mapStatetoProps)(Home)

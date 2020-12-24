@@ -1,10 +1,8 @@
 import React from 'react'
-import {Jumbotron, Tab, Tabs, Card, Container, Row, Col, Button, Form} from "react-bootstrap";
-import New_Question from "../New_Question/New_Question";
-import Leader_board from "../Leader_Board/Leader_board";
-import {Link} from "react-router-dom";
+import {Container, Row, Col, Button, Form} from "react-bootstrap";
+
 import avatar_johndoe from '../image/johndoe.png';
-import ResultCard from "./ResultCard";
+
 
 class QuestionCard extends React.Component {
     constructor(props) {
@@ -55,7 +53,7 @@ class QuestionCard extends React.Component {
                             return(
                                 <Row id={this.props.id}style={this.style_card} >
                                     <Col xs lg="3" style={this.col_styl}>
-                                        <img style={this.avatar_style} src={avatar_johndoe}></img>
+                                        <img style={this.avatar_style} src={avatar_johndoe} alt="user"></img>
                                     </Col>
                                     <Col style={this.col_styl}>
                                         <h4>John Does ask:</h4>
@@ -66,7 +64,7 @@ class QuestionCard extends React.Component {
                                 </Row>
                             )
                         }
-                        else if (this.state.isToggleOn===false &&this.props.selectedKey=="unanswered_question"){
+                        else if (this.state.isToggleOn===false &&this.props.selectedKey==="unanswered_question"){
                             return(
                                 <div className="align-items-left" >
                                     <Form.Row className="align-items-center">
@@ -81,7 +79,7 @@ class QuestionCard extends React.Component {
                                 </div>
                             )
                         }
-                        else if (this.state.isToggleOn===false &&this.props.selectedKey!="unanswered_question"){
+                        else if (this.state.isToggleOn===false &&this.props.selectedKey!=="unanswered_question"){
                             return(
                                 <div className="align-items-left" >
                                         <ul style={{textAlign: "left"}}>

@@ -7,3 +7,7 @@ export function setAuthedUser(id){
     }
 
 }
+
+export function handlesetAuthedUser(id){
+    return setAuthedUser(id)
+}

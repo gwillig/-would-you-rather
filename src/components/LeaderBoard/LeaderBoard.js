@@ -2,7 +2,7 @@ import React from 'react'
 import {Jumbotron } from "react-bootstrap";
 import UserCard from "./UserCard";
 
-class Leader_board extends React.Component {
+class LeaderBoard extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -32,4 +32,4 @@ class Leader_board extends React.Component {
     }
 }
 
-export default Leader_board
+export default LeaderBoard

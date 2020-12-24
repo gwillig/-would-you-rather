@@ -1,7 +1,7 @@
 import React from 'react'
 import {Container, Form, Jumbotron} from "react-bootstrap";
 
-class New_Question extends React.Component {
+class NewQuestion extends React.Component {
     title_style = {
         color:"#19647e",
         fontSize:"30px"
@@ -43,4 +43,4 @@ class New_Question extends React.Component {
     }
 }
 
-export default New_Question
+export default NewQuestion
