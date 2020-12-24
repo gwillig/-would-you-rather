@@ -23,7 +23,7 @@ class UserCard extends React.Component{
             <Container>
             <Row id={this.props.id}style={this.style_card} >
                 <Col xs lg="3" style={this.col_styl}>
-                    <img style={this.avatar_style} src={avatar_johndoe}></img>
+                    <img style={this.avatar_style} src={avatar_johndoe} alt="user"></img>
                 </Col>
                 <Col style={this.col_styl}>
                     <h4>{this.props.name}</h4>
