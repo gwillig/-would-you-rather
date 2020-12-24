@@ -24,7 +24,19 @@ import {SET_AUTHED_USER} from "./components/redux/actions/authUser";
 //redux
 
 class App extends React.Component {
-
+    constructor(props) {
+        super(props);
+        this.state = {
+            key: "Home"
+        };
+        this.handleSelect = this.handleSelect.bind(this)
+    }
+    handleSelect(key) {
+        /*
+        * Set a new key to the state. Based on the key a tab will be shown
+        * */
+        this.setState({key});
+    }
     componentDidMount() {
         this.props.dispatch(handleInitialData())
     }
@@ -61,12 +73,12 @@ class App extends React.Component {
 
                     <Row style={this.app_style}>
                         <Col style={{paddingRight: ' 0px'}}>
-                            <Tabs defaultActiveKey={'Home'}>
+                            <Tabs activeKey={this.state.key} onSelect={this.handleSelect}>
                                 <Tab eventKey='Home' title='Home'>
                                     <Home></Home>
                                 </Tab>
                                 <Tab eventKey='NewQuestion' title='New Question'>
-                                    <NewQuestion></NewQuestion>
+                                    <NewQuestion handleSelect={this.handleSelect}></NewQuestion>
                                 </Tab>
                                 <Tab eventKey='Leader_Board' title='Leader Board'>
                                     <LeaderBoard></LeaderBoard>

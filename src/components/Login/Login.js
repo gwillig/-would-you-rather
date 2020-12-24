@@ -23,12 +23,13 @@ class Login extends React.Component {
     }
     submitForm (e) {
         //Set user to state and redirects to homepage
+        e.preventDefault()
         //1.Step: Get value of selected user from form
         let selected_user = e.target.querySelector("select").value
         //2.Step: Save to store
         const { dispatch} = this.props
         dispatch(setAuthedUser(selected_user))
-        e.preventDefault()
+
         this.props.history.push('/home'); // <--- The page you want to redirect your user to.
 
 
@@ -47,7 +48,7 @@ class Login extends React.Component {
                      <Form.Group controlId="exampleForm.SelectCustom">
                          <Form.Control as="select" custom>
                              {
-                                 users_array.map(el=><option value={el.id}>{el.name}</option>)
+                                 users_array.map(el=><option key={el.id} value={el.id}>{el.name}</option>)
                              }
 
                          </Form.Control>

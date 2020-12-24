@@ -2,22 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b16ec03-094f-40f7-bd4f-4d4e8e5c73ef" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/design_architecture_v02.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/design_architecture_v02.pptx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home/QuestionCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/QuestionCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home/ResultCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/ResultCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home/SurveyCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/SurveyCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LeaderBoard/LeaderBoard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LeaderBoard/LeaderBoard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/NewQuestion/NewQuestion.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewQuestion/NewQuestion.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/redux/actions/authUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/redux/actions/authUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/redux/actions/Questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/redux/actions/Questions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/redux/actions/shared.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/redux/actions/shared.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/redux/reducers/Questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/redux/reducers/Questions.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +92,7 @@
       <workItem from="1608753123072" duration="1687000" />
       <workItem from="1608759939003" duration="2247000" />
       <workItem from="1608794649757" duration="8129000" />
-      <workItem from="1608813809425" duration="3952000" />
+      <workItem from="1608813809425" duration="11221000" />
     </task>
     <servers />
   </component>
@@ -134,7 +126,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/App.js</url>
-          <line>45</line>
+          <line>58</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
