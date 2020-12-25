@@ -53,7 +53,6 @@ class QuestionCard extends React.Component {
         console.log(choosen_answer_label)
         //2.Step: set answer to state
         this.setState({choosenAnswer:e.target.value})
-
     }
     submitForm (e) {
         /*
@@ -62,13 +61,9 @@ class QuestionCard extends React.Component {
         console.log("hellooooooooooo")
         debugger
         // this.props.parent.setState({authedUser:this.props.authedUser})
-
         e.preventDefault()
         let choosenAnswer = this.state.choosenAnswer
-        debugger
-
         //2.Step: Save to store
-
         const dispatch = this.props.dispatch
 
         dispatch(handleSaveAnswer({
