@@ -39,7 +39,6 @@ class QuestionCard extends React.Component {
         /*
         * @description:
         * Show on click the details of a question*/
-        debugger
         this.setState(prevState => ({
             isToggleOn: !prevState.isToggleOn
         }));
@@ -58,9 +57,6 @@ class QuestionCard extends React.Component {
         /*
         * @description */
         //1.Step: choosen answer from state
-        console.log("hellooooooooooo")
-        debugger
-        // this.props.parent.setState({authedUser:this.props.authedUser})
         e.preventDefault()
         let choosenAnswer = this.state.choosenAnswer
         //2.Step: Save to store
@@ -86,17 +82,16 @@ class QuestionCard extends React.Component {
                         if (this.state.isToggleOn) {
                             return(
                                 <Row id={this.props.id}style={this.style_card} >
-                                    <Col md="4" lg="4" style={this.col_styl}>
-
+                                    <Col md="5" lg="5" style={this.col_styl}>
                                         <img style={this.avatar_style}
                                             src={this.props.question.avatarURL}
                                              alt="user">
 
                                         </img>
                                     </Col>
-                                    <Col xs md="6" lg="6" style={this.col_styl}>
-                                        {/*<h4>{this.props.question.name} ask:</h4>*/}
-                                        <h5>Would you rather {this.props.question.optionOne.text}</h5>
+                                    <Col  style={this.col_styl}>
+                                        <h4>{this.props.question.user_name} asks:</h4>
+                                        <h6>Would you rather {this.props.question.optionOne.text}</h6>
                                         <button onClick={this.handleClick.bind(this)} style={this.viewBtn_style} className="btn btn-primary btn-block" >View Poll</button>
 
                                     </Col>
@@ -107,7 +102,6 @@ class QuestionCard extends React.Component {
                             return(
                                 <Row id={this.props.id}style={this.style_card} >
                                     <Col xs  md="4" lg="4" style={this.col_styl}>
-
                                         <img style={this.avatar_style}
                                              src={this.props.question.avatarURL}
                                              alt="user">

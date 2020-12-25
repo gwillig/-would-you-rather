@@ -98,14 +98,14 @@ class ResultCard extends React.Component {
                                         <ul style={{textAlign: "left"}}>
                                             <li>{this.props.question.optionOne.text}
                                                 <ul>
-                                                    <li>{this.state.total_optionOne} out of {this.state.total} ({this.state.total_optionOne/this.state.total}%)
+                                                    <li>{this.state.total_optionOne} out of {this.state.total} ({Math.round(this.state.total_optionOne/this.state.total*100)}%)
                                                     </li>
                                                 </ul>
                                             </li>
                                             <li>{this.props.question.optionTwo.text}
                                                 <ul>
                                                     <li>
-                                                        {this.state.total_optionTwo} out of {this.state.total} ({this.state.total_optionTwo/this.state.total}%)
+                                                        {this.state.total_optionTwo} out of {this.state.total} ({Math.round(this.state.total_optionTwo/this.state.total*100)}%)
                                                     </li>
                                                 </ul>
                                             </li>
