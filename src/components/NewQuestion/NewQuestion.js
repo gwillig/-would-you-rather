@@ -38,8 +38,6 @@ class NewQuestion extends React.Component {
         // dispatch(setAuthedUser(selected_user))
         this.props.handleSelect("Home")
 
-
-
     }
     render() {
         return (

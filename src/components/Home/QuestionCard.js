@@ -1,15 +1,14 @@
 import React from 'react'
-import {Container, Row, Col, Button, Form} from "react-bootstrap";
-
-import avatar_johndoe from '../image/johndoe.png';
-
+import {Container, Row, Col, Button, Form, Jumbotron, Tabs, Tab} from "react-bootstrap";
+import {handleSaveAnswer} from "../redux/actions/Questions";
+import {connect} from 'react-redux'
 
 class QuestionCard extends React.Component {
     constructor(props) {
         super(props)
         this.state = { isToggleOn: true }
         this.handleClick = this.handleClick.bind(this);
-        this.answerOptions=["Frontend","Backend"]
+        this.choosenAnswer=""
     }
 
 
@@ -36,69 +35,121 @@ class QuestionCard extends React.Component {
         padding:'10px'
     }
 
-    onClick=()=>{
-        console.log(this)
-
-    }
     handleClick() {
+        /*
+        * @description:
+        * Show on click the details of a question*/
+        debugger
         this.setState(prevState => ({
             isToggleOn: !prevState.isToggleOn
         }));
     }
+    setAnswer(e){
+        /*
+        * @description:
+        * Set the answer to the state on click*/
+        //1.Step: Get selected answer
+        let choosen_answer_label = e.target.parentElement.querySelector("label").textContent
+        console.log(choosen_answer_label)
+        //2.Step: set answer to state
+        this.setState({choosenAnswer:e.target.value})
+
+    }
+    submitForm (e) {
+        /*
+        * @description */
+        //1.Step: choosen answer from state
+        console.log("hellooooooooooo")
+        debugger
+        // this.props.parent.setState({authedUser:this.props.authedUser})
+
+        e.preventDefault()
+        let choosenAnswer = this.state.choosenAnswer
+        debugger
+
+        //2.Step: Save to store
+
+        const dispatch = this.props.dispatch
+
+        dispatch(handleSaveAnswer({
+            qid:this.props.question.id,
+            authedUser:this.props.authedUser,
+            answer: choosenAnswer,
+        }))
+
+        this.handleClick()
+
+
+
+    }
     render() {
+
+
         return (
                 <Container>
                     {(() => {
                         if (this.state.isToggleOn) {
                             return(
                                 <Row id={this.props.id}style={this.style_card} >
-                                    <Col xs lg="3" style={this.col_styl}>
-                                        <img style={this.avatar_style} src={avatar_johndoe} alt="user"></img>
+                                    <Col md="4" lg="4" style={this.col_styl}>
+
+                                        <img style={this.avatar_style}
+                                            src={this.props.question.avatarURL}
+                                             alt="user">
+
+                                        </img>
                                     </Col>
-                                    <Col style={this.col_styl}>
-                                        <h4>John Does ask:</h4>
-                                        <h5>Would you rather be areact</h5>
+                                    <Col xs md="6" lg="6" style={this.col_styl}>
+                                        {/*<h4>{this.props.question.name} ask:</h4>*/}
+                                        <h5>Would you rather {this.props.question.optionOne.text}</h5>
                                         <button onClick={this.handleClick.bind(this)} style={this.viewBtn_style} className="btn btn-primary btn-block" >View Poll</button>
 
                                     </Col>
                                 </Row>
                             )
                         }
-                        else if (this.state.isToggleOn===false &&this.props.selectedKey==="unanswered_question"){
+                        else if (this.state.isToggleOn===false){
                             return(
-                                <div className="align-items-left" >
-                                    <Form.Row className="align-items-center">
-                                    <Form.Group  controlId="formBasicCheckbox">
-                                        <Form.Check  name="selection" type="radio" label="Check me out" />
-                                        <Form.Check name="selection" type="radio" label="Check me out" />
-                                    </Form.Group>
-                                    </Form.Row>
-                                    <Button style={this.viewBtn_style} onClick={this.handleClick.bind(this)} >
-                                        Submit
-                                    </Button>
-                                </div>
-                            )
-                        }
-                        else if (this.state.isToggleOn===false &&this.props.selectedKey!=="unanswered_question"){
-                            return(
-                                <div className="align-items-left" >
-                                        <ul style={{textAlign: "left"}}>
-                                            <li>Would you rather find $50 yourself?:<span>2 out of 3</span></li>
-                                            <li>Would you rather have your best friend find $500?<span>1 out of 3</span></li>
-                                        </ul>
+                                <Row id={this.props.id}style={this.style_card} >
+                                    <Col xs  md="4" lg="4" style={this.col_styl}>
 
-                                    <Button  style={this.viewBtn_style}onClick={this.handleClick.bind(this)} >
-                                        Return
-                                    </Button>
-                                </div>
+                                        <img style={this.avatar_style}
+                                             src={this.props.question.avatarURL}
+                                             alt="user">
+
+                                        </img>
+                                    </Col>
+                                    <Col  style={this.col_styl}>
+                                        <div className="align-items-left" >
+                                            <Form onSubmit={this.submitForm.bind(this)} style={this.form_style}>
+                                                <Form.Group  controlId="formBasicCheckbox">
+                                                    <h5>Would you rather...</h5>
+                                                    <Form.Check value="optionOne" name="selection" type="radio" label={this.props.question.optionOne.text} onClick={this.setAnswer.bind(this)}/>
+                                                    <Form.Check value="optionTwo" name="selection" type="radio" label={this.props.question.optionTwo.text} onClick={this.setAnswer.bind(this)} />
+                                                </Form.Group>
+                                                <button type="submit" style={this.submitBtn_style} className="btn btn-primary btn-block"
+                                                        >Submit</button>
+                                            </Form>
+                                        </div>
+                                    </Col>
+                                </Row>
                             )
                         }
                     })()}
-
                 </Container>
+
 
         )
     }
 }
 
-export default QuestionCard
+function mapStateToProps ({authedUser, users, questions}) {
+
+    return{
+        users:users,
+        questions,
+        authedUser
+    }
+}
+
+export default connect(mapStateToProps)(QuestionCard);

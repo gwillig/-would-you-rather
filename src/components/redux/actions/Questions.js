@@ -1,7 +1,7 @@
 import { saveQuestion } from '../utils/api'
 export const RECEIVE_QUESTIONS = "RECEIVE_QUESTIONS"
 export const ADD_QUESTIONS = "ADD_QUESTIONS"
-
+export const SAVE_ANSWER = "SAVE_ANSWER"
 
 export function receiveQuestions(questions){
     return{
@@ -41,3 +41,20 @@ export function handleAddQuestion(optionOneText, optionTwoText) {
             })
     }
 }
+
+function SaveAnswer({ authedUser, qid, answer }) {
+    return {
+        type: SAVE_ANSWER,
+        authedUser,
+        qid,
+        answer
+    }
+}
+export function handleSaveAnswer(info) {
+    return (dispatch) => {
+        //this aptting the anyswer
+        dispatch(SaveAnswer(info))
+        console.log('Answer was saved')
+    }
+}
+

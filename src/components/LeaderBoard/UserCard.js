@@ -1,5 +1,4 @@
 import {Col, Container, Row} from "react-bootstrap";
-import avatar_johndoe from "../image/johndoe.png";
 import React from "react";
 
 
@@ -23,7 +22,7 @@ class UserCard extends React.Component{
             <Container>
             <Row id={this.props.id}style={this.style_card} >
                 <Col xs lg="3" style={this.col_styl}>
-                    <img style={this.avatar_style} src={avatar_johndoe} alt="user"></img>
+                    <img style={this.avatar_style} src={this.props.avatarURL} alt={this.props.name}></img>
                 </Col>
                 <Col style={this.col_styl}>
                     <h4>{this.props.name}</h4>
