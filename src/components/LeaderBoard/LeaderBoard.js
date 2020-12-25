@@ -2,11 +2,12 @@ import React from 'react'
 import {Jumbotron } from "react-bootstrap";
 import UserCard from "./UserCard";
 import {connect} from 'react-redux'
+
+
 class LeaderBoard extends React.Component {
     constructor(props) {
         super(props)
     }
-    debugger
     render() {
 
         return (

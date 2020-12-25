@@ -5,25 +5,25 @@ The project's goal was to create an app which lets a user play the “Would You 
 The game goes like this: A user is asked a question in the form: “Would you rather [option A] or [option B] ?”. <br>
 Answering "neither" or "both" is against the rules.
 
+The file design_architecture.pdf shows the planning process of project
 
 The `_DATA.js` file represents a fake database and methods that let you access the data. The only thing you need to edit in the ` _DATA.js` file is the value of `avatarURL`. Each user should have an avatar, so you’ll need to add the path to each user’s avatar.
 
-Using the provided starter code, you'll build a React/Redux front end for the application. We recommend using the [Create React App](https://github.com/facebook/create-react-app) to bootstrap the project.
 
 1. Getting Started
     1) 1.1. Run a demo locally
-    1) 1.2. Folder Structure explained
+    1) 1.2. _DATA.js xplained
 2. Licenses
     1) 2.1. About this Application
     2) 2.2 Third Party Content
-
+![](readme_material/application.gif)
 ### 1. Getting Started
 These instructions cover the setup and installation on your local machine for developing and testing purposes.
 #### 1.1. Run a demo locally
 * install all project dependencies with `npm install`
 * Install bootstrap `npm install bootstrap --save`
 * start the development server with `npm start`
-#### 1.2. Folder Structure explained
+#### 1.2.  _DATA.js xplained
 
 ## Data
 
